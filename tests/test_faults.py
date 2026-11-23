@@ -302,7 +302,11 @@ def test_property_streams_gap_free_and_duplicate_free_after_resume(tmp_path_fact
 def test_close_while_the_app_is_consuming_keeps_the_cursor_exact(secret, tokens, tmp_path):
     """Regression (found by a held-out scenario seed): close() raced with a consumer that
     kept pulling buffered messages after the cursor was flushed, so a restarted app got
-    those messages again."""
+    those messages again.
+
+    The consumer pauses at seq 500, close() starts, then the consumer resumes pulling while
+    close() runs. More messages are published after the close, so the restarted subscriber
+    always has a known last seq to wait for, however far the first consumer got."""
     async def go():
         from sigbroker.client import FileCursorStore
         path = str(tmp_path / "cursor.json")
@@ -311,28 +315,36 @@ def test_close_while_the_app_is_consuming_keeps_the_cursor_exact(secret, tokens,
                 for k in range(0, 3000, 500):
                     await asyncio.gather(*[pub.publish(TOPIC, sig(i)) for i in range(k, k + 500)])
             got = []
+            at_500, resume = asyncio.Event(), asyncio.Event()
             sub = Subscriber(b.url, tokens(), [TOPIC], cursor_store=FileCursorStore(path, min_interval_s=3600))
 
             async def consume():
                 async for d in sub:
                     got.append(d.seq)
+                    if d.seq == 500:
+                        at_500.set()
+                        await resume.wait()
                     await asyncio.sleep(0)
             task = asyncio.create_task(consume())
-            await wait_for(lambda: len(got) >= 500)
-            await sub.close()            # the consumer task is still running
-            await asyncio.sleep(0.05)
-            task.cancel()
-            await asyncio.gather(task, return_exceptions=True)
+            await wait_for(at_500.is_set)
+            closing = asyncio.create_task(sub.close())   # close() starts ...
+            resume.set()                                 # ... while the consumer keeps pulling
+            await closing
+            await wait_for(task.done)                    # it must stop by itself, not be cancelled
+            assert 500 <= len(got) < 3000
             saved = FileCursorStore(path).load(TOPIC)[1]
             assert saved == got[-1] and got == list(range(1, len(got) + 1))
+            async with Publisher(b.url, tokens("publisher")) as pub:
+                for i in range(3000, 3100):
+                    await pub.publish(TOPIC, sig(i))
             again = []
             sub = Subscriber(b.url, tokens(), [TOPIC], cursor_store=FileCursorStore(path))
             async for d in sub:
                 again.append(d.seq)
-                if d.seq == 3000:
+                if d.seq == 3100:
                     break
             await sub.close()
-            assert again == list(range(got[-1] + 1, 3001))
+            assert again == list(range(got[-1] + 1, 3101))
     run(go())
 
 

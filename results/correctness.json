@@ -1,0 +1,6251 @@
+{
+ "config": {
+  "n_messages": 600,
+  "n_faults": 6,
+  "burst": 25,
+  "stall_burst": 5000,
+  "stall_burst_size": 100,
+  "backend": "sqlite",
+  "max_queue": 64,
+  "slow_grace_s": 0.15,
+  "slow_buffer": 16,
+  "settle_timeout_s": 30.0
+ },
+ "dev_sqlite": {
+  "backend": "sqlite",
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9
+  ],
+  "summary": {
+   "scenarios": 10,
+   "passed": 10,
+   "messages_published": 56000,
+   "faults": {
+    "cut": 10,
+    "partition": 14,
+    "crash": 12,
+    "restart": 12,
+    "app_restart": 12
+   },
+   "log_duplicate_msg_ids": 0,
+   "log_missing_msg_ids": 0,
+   "subscribers": {
+    "desk_fast": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 20,
+     "reconnects_observed": 46,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "desk_slow": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 20,
+     "reconnects_observed": 16,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "desk_app": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 20,
+     "reconnects_observed": 36,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "desk_late": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 20,
+     "reconnects_observed": 43,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "dash_resync": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 20,
+     "reconnects_observed": 36,
+     "resyncs_observed": 41,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "dash_skip": {
+     "unaccounted": 0,
+     "both": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "delivered_observed": 49328,
+     "in_reported_gaps_observed": 6672,
+     "reconnects_observed": 22
+    }
+   },
+   "broker_observed": {
+    "slow_disconnects": 10,
+    "dropped": 41669,
+    "publish_duplicates": 0
+   },
+   "publisher_resent_observed": 115,
+   "wall_s_observed": 60.2
+  },
+  "per_seed": [
+   {
+    "seed": 0,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3418,
+     "signals.fx": 2182
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 1,
+     "crash": 0,
+     "restart": 4,
+     "app_restart": 0
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 5,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 4423,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2128,
+        "in_reported_gaps_observed": 1290
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 1422,
+        "in_reported_gaps_observed": 760
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 102
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4224,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 25,
+    "passed": true,
+    "wall_s_observed": 6.61
+   },
+   {
+    "seed": 1,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3357,
+     "signals.fx": 2243
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 1,
+     "crash": 2,
+     "restart": 1,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3357,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2243,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3357,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2243,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3357,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2243,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3357,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2243,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3357,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2243,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 2688,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3316,
+        "in_reported_gaps_observed": 41
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2220,
+        "in_reported_gaps_observed": 23
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 26
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4253,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 25,
+    "passed": true,
+    "wall_s_observed": 6.11
+   },
+   {
+    "seed": 2,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3397,
+     "signals.fx": 2203
+    },
+    "faults": {
+     "cut": 3,
+     "partition": 2,
+     "crash": 1,
+     "restart": 0,
+     "app_restart": 0
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3397,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2203,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3397,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2203,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3397,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2203,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3397,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2203,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3397,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2203,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 5,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 2014,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3384,
+        "in_reported_gaps_observed": 13
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2135,
+        "in_reported_gaps_observed": 68
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 12
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4020,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 20,
+    "passed": true,
+    "wall_s_observed": 7.17
+   },
+   {
+    "seed": 3,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3314,
+     "signals.fx": 2286
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 1,
+     "crash": 2,
+     "restart": 0,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3314,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2286,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3314,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2286,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3314,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2286,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3314,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2286,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3314,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2286,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 347,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3293,
+        "in_reported_gaps_observed": 21
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2274,
+        "in_reported_gaps_observed": 12
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 13
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4237,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 3,
+    "passed": true,
+    "wall_s_observed": 6.43
+   },
+   {
+    "seed": 4,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3359,
+     "signals.fx": 2241
+    },
+    "faults": {
+     "cut": 0,
+     "partition": 3,
+     "crash": 0,
+     "restart": 1,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3359,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2241,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3359,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2241,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3359,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2241,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3359,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2241,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3359,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2241,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 5,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 4741,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2114,
+        "in_reported_gaps_observed": 1245
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 1409,
+        "in_reported_gaps_observed": 832
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 107
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4379,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 0,
+    "passed": true,
+    "wall_s_observed": 4.23
+   },
+   {
+    "seed": 5,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3377,
+     "signals.fx": 2223
+    },
+    "faults": {
+     "cut": 0,
+     "partition": 2,
+     "crash": 1,
+     "restart": 1,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3377,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2223,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3377,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2223,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3377,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2223,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3377,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2223,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3377,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2223,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 348,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3307,
+        "in_reported_gaps_observed": 70
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2174,
+        "in_reported_gaps_observed": 49
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 17
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4137,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 0,
+    "passed": true,
+    "wall_s_observed": 6.23
+   },
+   {
+    "seed": 6,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3389,
+     "signals.fx": 2211
+    },
+    "faults": {
+     "cut": 0,
+     "partition": 1,
+     "crash": 2,
+     "restart": 1,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3389,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2211,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3389,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2211,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3389,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2211,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3389,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2211,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3389,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2211,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 4,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 4571,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2138,
+        "in_reported_gaps_observed": 1251
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 1451,
+        "in_reported_gaps_observed": 760
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 106
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 3973,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 0,
+    "passed": true,
+    "wall_s_observed": 5.72
+   },
+   {
+    "seed": 7,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3277,
+     "signals.fx": 2323
+    },
+    "faults": {
+     "cut": 2,
+     "partition": 0,
+     "crash": 1,
+     "restart": 3,
+     "app_restart": 0
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3277,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2323,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3277,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2323,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3277,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2323,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3277,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2323,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3277,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2323,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 966,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3218,
+        "in_reported_gaps_observed": 59
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2311,
+        "in_reported_gaps_observed": 12
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 14
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4016,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 23,
+    "passed": true,
+    "wall_s_observed": 5.98
+   },
+   {
+    "seed": 8,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3334,
+     "signals.fx": 2266
+    },
+    "faults": {
+     "cut": 2,
+     "partition": 1,
+     "crash": 2,
+     "restart": 0,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3334,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2266,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3334,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2266,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3334,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2266,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3334,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2266,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3334,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2266,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 7,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 1590,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3310,
+        "in_reported_gaps_observed": 24
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2155,
+        "in_reported_gaps_observed": 111
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 16
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4281,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 19,
+    "passed": true,
+    "wall_s_observed": 5.75
+   },
+   {
+    "seed": 9,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3320,
+     "signals.fx": 2280
+    },
+    "faults": {
+     "cut": 0,
+     "partition": 2,
+     "crash": 1,
+     "restart": 1,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3320,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2280,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3320,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2280,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3320,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2280,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3320,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2280,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3320,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2280,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 1144,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3298,
+        "in_reported_gaps_observed": 22
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2271,
+        "in_reported_gaps_observed": 9
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 12
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4149,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 0,
+    "passed": true,
+    "wall_s_observed": 6.02
+   }
+  ]
+ },
+ "dev_redis_protocol": {
+  "backend": "fakeredis",
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "summary": {
+   "scenarios": 5,
+   "passed": 5,
+   "messages_published": 28000,
+   "faults": {
+    "cut": 6,
+    "partition": 8,
+    "crash": 5,
+    "restart": 6,
+    "app_restart": 5
+   },
+   "log_duplicate_msg_ids": 0,
+   "log_missing_msg_ids": 0,
+   "subscribers": {
+    "desk_fast": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 10,
+     "reconnects_observed": 22,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "desk_slow": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 10,
+     "reconnects_observed": 10,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "desk_app": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 10,
+     "reconnects_observed": 14,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "desk_late": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 10,
+     "reconnects_observed": 16,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "dash_resync": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 10,
+     "reconnects_observed": 23,
+     "resyncs_observed": 20,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "dash_skip": {
+     "unaccounted": 0,
+     "both": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "delivered_observed": 23656,
+     "in_reported_gaps_observed": 4344,
+     "reconnects_observed": 13
+    }
+   },
+   "broker_observed": {
+    "slow_disconnects": 7,
+    "dropped": 20275,
+    "publish_duplicates": 0
+   },
+   "publisher_resent_observed": 73,
+   "wall_s_observed": 41.0
+  },
+  "per_seed": [
+   {
+    "seed": 0,
+    "backend": "fakeredis",
+    "published": {
+     "signals.rates": 3418,
+     "signals.fx": 2182
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 1,
+     "crash": 0,
+     "restart": 4,
+     "app_restart": 0
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 4,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 3919,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2163,
+        "in_reported_gaps_observed": 1255
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 1354,
+        "in_reported_gaps_observed": 828
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 103
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4069,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 25,
+    "passed": true,
+    "wall_s_observed": 10.19
+   },
+   {
+    "seed": 1,
+    "backend": "fakeredis",
+    "published": {
+     "signals.rates": 3357,
+     "signals.fx": 2243
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 1,
+     "crash": 2,
+     "restart": 1,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3357,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2243,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3357,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2243,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3357,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2243,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3357,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2243,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3357,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2243,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 2689,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3318,
+        "in_reported_gaps_observed": 39
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2219,
+        "in_reported_gaps_observed": 24
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 26
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4251,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 25,
+    "passed": true,
+    "wall_s_observed": 9.22
+   },
+   {
+    "seed": 2,
+    "backend": "fakeredis",
+    "published": {
+     "signals.rates": 3397,
+     "signals.fx": 2203
+    },
+    "faults": {
+     "cut": 3,
+     "partition": 2,
+     "crash": 1,
+     "restart": 0,
+     "app_restart": 0
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3397,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2203,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3397,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2203,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3397,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2203,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3397,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2203,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3397,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2203,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 4,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 1865,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3364,
+        "in_reported_gaps_observed": 33
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2155,
+        "in_reported_gaps_observed": 48
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 11
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 3781,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 20,
+    "passed": true,
+    "wall_s_observed": 8.62
+   },
+   {
+    "seed": 3,
+    "backend": "fakeredis",
+    "published": {
+     "signals.rates": 3314,
+     "signals.fx": 2286
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 1,
+     "crash": 2,
+     "restart": 0,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3314,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2286,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3314,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2286,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3314,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2286,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3314,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2286,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3314,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2286,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 4,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 560,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3258,
+        "in_reported_gaps_observed": 56
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2240,
+        "in_reported_gaps_observed": 46
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 14
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4017,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 3,
+    "passed": true,
+    "wall_s_observed": 7.49
+   },
+   {
+    "seed": 4,
+    "backend": "fakeredis",
+    "published": {
+     "signals.rates": 3359,
+     "signals.fx": 2241
+    },
+    "faults": {
+     "cut": 0,
+     "partition": 3,
+     "crash": 0,
+     "restart": 1,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3359,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2241,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3359,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2241,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3359,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2241,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3359,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2241,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3359,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2241,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 5,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 4773,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2125,
+        "in_reported_gaps_observed": 1234
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 1460,
+        "in_reported_gaps_observed": 781
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 91
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 3,
+     "dropped": 4157,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 0,
+    "passed": true,
+    "wall_s_observed": 5.47
+   }
+  ]
+ },
+ "holdout_sqlite": {
+  "backend": "sqlite",
+  "seeds": [
+   200,
+   201,
+   202,
+   203,
+   204,
+   205,
+   206,
+   207,
+   208,
+   209,
+   210,
+   211,
+   212,
+   213,
+   214,
+   215,
+   216,
+   217,
+   218,
+   219
+  ],
+  "summary": {
+   "scenarios": 20,
+   "passed": 20,
+   "messages_published": 112000,
+   "faults": {
+    "cut": 22,
+    "partition": 22,
+    "crash": 29,
+    "restart": 19,
+    "app_restart": 28
+   },
+   "log_duplicate_msg_ids": 0,
+   "log_missing_msg_ids": 0,
+   "subscribers": {
+    "desk_fast": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 40,
+     "reconnects_observed": 85,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "desk_slow": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 40,
+     "reconnects_observed": 42,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "desk_app": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 40,
+     "reconnects_observed": 65,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "desk_late": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 40,
+     "reconnects_observed": 84,
+     "resyncs_observed": 0,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "dash_resync": {
+     "missing": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "exact_streams": 40,
+     "reconnects_observed": 73,
+     "resyncs_observed": 74,
+     "duplicates_dropped_by_sdk_observed": 0
+    },
+    "dash_skip": {
+     "unaccounted": 0,
+     "both": 0,
+     "duplicates": 0,
+     "out_of_order": 0,
+     "delivered_observed": 100651,
+     "in_reported_gaps_observed": 11349,
+     "reconnects_observed": 44
+    }
+   },
+   "broker_observed": {
+    "slow_disconnects": 20,
+    "dropped": 84068,
+    "publish_duplicates": 0
+   },
+   "publisher_resent_observed": 298,
+   "wall_s_observed": 123.7
+  },
+  "per_seed": [
+   {
+    "seed": 200,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3360,
+     "signals.fx": 2240
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 3,
+     "crash": 2,
+     "restart": 0,
+     "app_restart": 0
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3360,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2240,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3360,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2240,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3360,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2240,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3360,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2240,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3360,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2240,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 397,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3342,
+        "in_reported_gaps_observed": 18
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2229,
+        "in_reported_gaps_observed": 11
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 14
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4128,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 10,
+    "passed": true,
+    "wall_s_observed": 6.09
+   },
+   {
+    "seed": 201,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3396,
+     "signals.fx": 2204
+    },
+    "faults": {
+     "cut": 2,
+     "partition": 1,
+     "crash": 0,
+     "restart": 2,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3396,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2204,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3396,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2204,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3396,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2204,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3396,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2204,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3396,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2204,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 338,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3378,
+        "in_reported_gaps_observed": 18
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2196,
+        "in_reported_gaps_observed": 8
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 13
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4201,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 33,
+    "passed": true,
+    "wall_s_observed": 5.71
+   },
+   {
+    "seed": 202,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3320,
+     "signals.fx": 2280
+    },
+    "faults": {
+     "cut": 0,
+     "partition": 3,
+     "crash": 1,
+     "restart": 0,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3320,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2280,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3320,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2280,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3320,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2280,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3320,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2280,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3320,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2280,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 5,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 2857,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3250,
+        "in_reported_gaps_observed": 70
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2231,
+        "in_reported_gaps_observed": 49
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 26
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 3853,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 0,
+    "passed": true,
+    "wall_s_observed": 6.54
+   },
+   {
+    "seed": 203,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3354,
+     "signals.fx": 2246
+    },
+    "faults": {
+     "cut": 2,
+     "partition": 0,
+     "crash": 1,
+     "restart": 2,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3354,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2246,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3354,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2246,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3354,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2246,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3354,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2246,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3354,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2246,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 333,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3344,
+        "in_reported_gaps_observed": 10
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2232,
+        "in_reported_gaps_observed": 14
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 12
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4082,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 21,
+    "passed": true,
+    "wall_s_observed": 5.91
+   },
+   {
+    "seed": 204,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3317,
+     "signals.fx": 2283
+    },
+    "faults": {
+     "cut": 2,
+     "partition": 0,
+     "crash": 1,
+     "restart": 1,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3317,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2283,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3317,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2283,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3317,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2283,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3317,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2283,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3317,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2283,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 5,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 5856,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3259,
+        "in_reported_gaps_observed": 58
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2263,
+        "in_reported_gaps_observed": 20
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 22
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4373,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 22,
+    "passed": true,
+    "wall_s_observed": 5.69
+   },
+   {
+    "seed": 205,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3373,
+     "signals.fx": 2227
+    },
+    "faults": {
+     "cut": 2,
+     "partition": 1,
+     "crash": 1,
+     "restart": 1,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3373,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2227,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3373,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2227,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3373,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2227,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3373,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2227,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3373,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2227,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 2758,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3333,
+        "in_reported_gaps_observed": 40
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2217,
+        "in_reported_gaps_observed": 10
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 24
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4233,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 50,
+    "passed": true,
+    "wall_s_observed": 5.99
+   },
+   {
+    "seed": 206,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3420,
+     "signals.fx": 2180
+    },
+    "faults": {
+     "cut": 2,
+     "partition": 0,
+     "crash": 3,
+     "restart": 0,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3420,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2180,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3420,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2180,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3420,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2180,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3420,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2180,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3420,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2180,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 301,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3404,
+        "in_reported_gaps_observed": 16
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2172,
+        "in_reported_gaps_observed": 8
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 12
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4174,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 5,
+    "passed": true,
+    "wall_s_observed": 6.04
+   },
+   {
+    "seed": 207,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3383,
+     "signals.fx": 2217
+    },
+    "faults": {
+     "cut": 0,
+     "partition": 1,
+     "crash": 0,
+     "restart": 3,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3383,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2217,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3383,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2217,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3383,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2217,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3383,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2217,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3383,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2217,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 5,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 4351,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2103,
+        "in_reported_gaps_observed": 1280
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 1401,
+        "in_reported_gaps_observed": 816
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 104
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4306,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 0,
+    "passed": true,
+    "wall_s_observed": 7.61
+   },
+   {
+    "seed": 208,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3385,
+     "signals.fx": 2215
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 1,
+     "crash": 3,
+     "restart": 0,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3385,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2215,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3385,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2215,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3385,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2215,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3385,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2215,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3385,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2215,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 341,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3300,
+        "in_reported_gaps_observed": 85
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2137,
+        "in_reported_gaps_observed": 78
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 15
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4166,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 17,
+    "passed": true,
+    "wall_s_observed": 6.32
+   },
+   {
+    "seed": 209,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3407,
+     "signals.fx": 2193
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 1,
+     "crash": 1,
+     "restart": 2,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3407,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2193,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3407,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2193,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3407,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2193,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3407,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2193,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3407,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2193,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 4,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 2842,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2097,
+        "in_reported_gaps_observed": 1310
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 1373,
+        "in_reported_gaps_observed": 820
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 106
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4230,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 17,
+    "passed": true,
+    "wall_s_observed": 7.41
+   },
+   {
+    "seed": 210,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3416,
+     "signals.fx": 2184
+    },
+    "faults": {
+     "cut": 0,
+     "partition": 1,
+     "crash": 2,
+     "restart": 0,
+     "app_restart": 3
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3416,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2184,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3416,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2184,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3416,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2184,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3416,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2184,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3416,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2184,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 1401,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3396,
+        "in_reported_gaps_observed": 20
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2178,
+        "in_reported_gaps_observed": 6
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 13
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4231,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 0,
+    "passed": true,
+    "wall_s_observed": 5.7
+   },
+   {
+    "seed": 211,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3347,
+     "signals.fx": 2253
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 1,
+     "crash": 3,
+     "restart": 1,
+     "app_restart": 0
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3347,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2253,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3347,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2253,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 7,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3347,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2253,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3347,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2253,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3347,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2253,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 5,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 3983,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2030,
+        "in_reported_gaps_observed": 1317
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 1368,
+        "in_reported_gaps_observed": 885
+       }
+      },
+      "reconnects_observed": 6,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 101
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4588,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 12,
+    "passed": true,
+    "wall_s_observed": 3.8
+   },
+   {
+    "seed": 212,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3344,
+     "signals.fx": 2256
+    },
+    "faults": {
+     "cut": 0,
+     "partition": 1,
+     "crash": 1,
+     "restart": 2,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3344,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2256,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3344,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2256,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3344,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2256,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3344,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2256,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3344,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2256,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 4,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 2795,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2168,
+        "in_reported_gaps_observed": 1176
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 1446,
+        "in_reported_gaps_observed": 810
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 93
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4080,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 0,
+    "passed": true,
+    "wall_s_observed": 7.91
+   },
+   {
+    "seed": 213,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3343,
+     "signals.fx": 2257
+    },
+    "faults": {
+     "cut": 2,
+     "partition": 2,
+     "crash": 0,
+     "restart": 0,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3343,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2257,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3343,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2257,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3343,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2257,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3343,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2257,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3343,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2257,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 1143,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3329,
+        "in_reported_gaps_observed": 14
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2242,
+        "in_reported_gaps_observed": 15
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 14
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4112,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 29,
+    "passed": true,
+    "wall_s_observed": 6.1
+   },
+   {
+    "seed": 214,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3418,
+     "signals.fx": 2182
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 1,
+     "crash": 2,
+     "restart": 1,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3418,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2182,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 2722,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2126,
+        "in_reported_gaps_observed": 1292
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 1382,
+        "in_reported_gaps_observed": 800
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 96
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4184,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 22,
+    "passed": true,
+    "wall_s_observed": 7.36
+   },
+   {
+    "seed": 215,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3315,
+     "signals.fx": 2285
+    },
+    "faults": {
+     "cut": 0,
+     "partition": 1,
+     "crash": 2,
+     "restart": 0,
+     "app_restart": 3
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3315,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2285,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3315,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2285,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3315,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2285,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3315,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2285,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3315,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2285,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 351,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3295,
+        "in_reported_gaps_observed": 20
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2281,
+        "in_reported_gaps_observed": 4
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 12
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4064,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 0,
+    "passed": true,
+    "wall_s_observed": 5.76
+   },
+   {
+    "seed": 216,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3288,
+     "signals.fx": 2312
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 1,
+     "crash": 2,
+     "restart": 1,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3288,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2312,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3288,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2312,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3288,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2312,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3288,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2312,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3288,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2312,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 2655,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3264,
+        "in_reported_gaps_observed": 24
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2226,
+        "in_reported_gaps_observed": 86
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 22
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4270,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 25,
+    "passed": true,
+    "wall_s_observed": 6.06
+   },
+   {
+    "seed": 217,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3399,
+     "signals.fx": 2201
+    },
+    "faults": {
+     "cut": 0,
+     "partition": 0,
+     "crash": 4,
+     "restart": 1,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3399,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2201,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3399,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2201,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3399,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2201,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3399,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2201,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 5,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3399,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2201,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 3,
+      "resyncs_observed": 5,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 1724,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3387,
+        "in_reported_gaps_observed": 12
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2119,
+        "in_reported_gaps_observed": 82
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 15
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4202,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 0,
+    "passed": true,
+    "wall_s_observed": 5.94
+   },
+   {
+    "seed": 218,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3403,
+     "signals.fx": 2197
+    },
+    "faults": {
+     "cut": 3,
+     "partition": 0,
+     "crash": 0,
+     "restart": 1,
+     "app_restart": 2
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3403,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2197,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3403,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2197,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3403,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2197,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3403,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2197,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3403,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2197,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 5,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 1747,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3387,
+        "in_reported_gaps_observed": 16
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2189,
+        "in_reported_gaps_observed": 8
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 12
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4320,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 30,
+    "passed": true,
+    "wall_s_observed": 6.02
+   },
+   {
+    "seed": 219,
+    "backend": "sqlite",
+    "published": {
+     "signals.rates": 3327,
+     "signals.fx": 2273
+    },
+    "faults": {
+     "cut": 1,
+     "partition": 3,
+     "crash": 0,
+     "restart": 1,
+     "app_restart": 1
+    },
+    "log": {
+     "duplicate_msg_ids": 0,
+     "missing_msg_ids": 0,
+     "seq_holes": 0
+    },
+    "subscribers": {
+     "desk_fast": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3327,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2273,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_slow": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3327,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2273,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_app": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3327,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2273,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 2,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "desk_late": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3327,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2273,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 0
+     },
+     "dash_resync": {
+      "topics": {
+       "signals.rates": {
+        "delivered": 3327,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       },
+       "signals.fx": {
+        "delivered": 2273,
+        "missing": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "exact": true
+       }
+      },
+      "reconnects_observed": 4,
+      "resyncs_observed": 3,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 1027,
+      "gaps_reported_observed": 0
+     },
+     "dash_skip": {
+      "topics": {
+       "signals.rates": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 3312,
+        "in_reported_gaps_observed": 15
+       },
+       "signals.fx": {
+        "unaccounted": 0,
+        "both": 0,
+        "duplicates": 0,
+        "out_of_order": 0,
+        "delivered_observed": 2265,
+        "in_reported_gaps_observed": 8
+       }
+      },
+      "reconnects_observed": 1,
+      "resyncs_observed": 0,
+      "duplicates_dropped_by_sdk_observed": 0,
+      "stale_dropped_by_sdk_observed": 0,
+      "gaps_reported_observed": 12
+     }
+    },
+    "broker_observed": {
+     "slow_disconnects": 1,
+     "dropped": 4271,
+     "publish_duplicates": 0
+    },
+    "publisher_resent_observed": 5,
+    "passed": true,
+    "wall_s_observed": 5.78
+   }
+  ]
+ }
+}

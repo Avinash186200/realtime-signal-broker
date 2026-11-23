@@ -1,0 +1,9 @@
+websockets>=13
+pydantic>=2.6
+PyJWT>=2.8
+prometheus-client>=0.20
+redis>=5,<7
+pytest>=8
+hypothesis>=6.100
+fakeredis[lua]>=2.23
+trustme>=1.1

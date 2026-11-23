@@ -1,0 +1,44 @@
+# Local run: Redis 7 + the broker, plus an optional demo publisher and subscriber.
+#   export SIGBROKER_SECRET=$(python -c "import secrets; print(secrets.token_hex(32))")
+#   docker compose up --build                     # broker on ws://localhost:8765/ws
+#   docker compose --profile demo up --build      # also a publisher and a subscriber
+# Metrics: http://localhost:8765/metrics   Health: http://localhost:8765/healthz
+services:
+  redis:
+    image: redis:7-alpine
+    # appendfsync always: an acked publish survives a Redis crash (everysec is faster but can
+    # lose about a second of acked appends). noeviction: when memory is full Redis refuses
+    # writes (publishers get errors and retry) instead of silently evicting log entries.
+    command: ["redis-server", "--appendonly", "yes", "--appendfsync", "always",
+              "--maxmemory-policy", "noeviction"]
+    volumes: ["redis-data:/data"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      retries: 15
+
+  broker:
+    build: .
+    environment:
+      SIGBROKER_SECRET: ${SIGBROKER_SECRET:?set SIGBROKER_SECRET to 64 random hex characters}
+    ports: ["127.0.0.1:8765:8765"]
+    depends_on:
+      redis: {condition: service_healthy}
+    stop_grace_period: 10s
+
+  publisher:
+    profiles: ["demo"]
+    build: .
+    environment: {SIGBROKER_SECRET: "${SIGBROKER_SECRET}"}
+    command: ["publish", "--url", "ws://broker:8765/ws", "--topic", "signals.rates", "--rate", "5"]
+    depends_on: [broker]
+
+  subscriber:
+    profiles: ["demo"]
+    build: .
+    environment: {SIGBROKER_SECRET: "${SIGBROKER_SECRET}"}
+    command: ["subscribe", "--url", "ws://broker:8765/ws", "--topic", "signals.rates"]
+    depends_on: [broker]
+
+volumes:
+  redis-data:
